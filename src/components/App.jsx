@@ -22,6 +22,7 @@ const App = () => {
   const [bad, setBad] = useState(0);
 
   const total = good + neutral + bad;
+  const onOptions = Object.keys({ good, neutral, bad });
 
   const positiveFeedback = Math.round((good / (good + (bad + neutral))) * 100);
 
@@ -46,7 +47,7 @@ const App = () => {
     <Div className="common-feedback">
       <Section title={'Please leave feedback'}>
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={onOptions}
           onLeaveFeedback={onLeaveFeedback}
         />
       </Section>
